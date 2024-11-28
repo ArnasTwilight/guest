@@ -1,0 +1,36 @@
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./:/var/www/
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d
+    ports:
+      - "8878:80"
+    depends_on:
+      - app
+    container_name: guest_nginx
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    image: php:8.3.7-fpm
+    volumes:
+      - ./:/var/www
+    depends_on:
+        - db
+    container_name: guest_app
+
+  db:
+    image: mysql:8.0
+    restart: always
+    volumes:
+        - ./docker/db/tmp/db:/var/lib/mysql
+    environment:
+        MYSQL_DATABASE: guest
+        MYSQL_ROOT_PASSWORD: root
+    ports:
+        - 8102:3306
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    container_name: guest_db
+

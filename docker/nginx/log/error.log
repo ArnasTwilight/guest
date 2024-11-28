@@ -1,0 +1,5 @@
+2024/11/07 08:16:38 [error] 20#20: *1 directory index of "/var/www/worker_app/public/" is forbidden, client: 172.19.0.1, server: , request: "GET / HTTP/1.1", host: "localhost:8877"
+2024/11/07 11:39:01 [error] 20#20: *1 directory index of "/var/www/worker_app/public/" is forbidden, client: 172.19.0.1, server: , request: "GET / HTTP/1.1", host: "localhost:8877"
+2024/11/28 17:29:52 [error] 20#20: *1 directory index of "/var/www/guest_app/public/" is forbidden, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", host: "localhost:8878"
+2024/11/28 17:48:13 [error] 20#20: *1 directory index of "/var/www/guest_app/public/" is forbidden, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", host: "localhost:8878"
+2024/11/28 17:51:17 [error] 21#21: *2 directory index of "/var/www/guest_app/public/" is forbidden, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", host: "localhost:8878"
