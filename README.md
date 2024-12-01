@@ -1,6 +1,5 @@
 # Routes
 
----
 ### 1. GET|HEAD /api/guests?page={number}
 
 #### Пример запроса:
@@ -132,8 +131,6 @@ Accept: application/json
 ```
 
 # Project
-
----
 
 ## Установка
 
