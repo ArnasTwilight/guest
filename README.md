@@ -1,4 +1,25 @@
-# Routes
+# Проект
+
+## Установка
+
+1. ```docker compose up -d --build```
+2. ```docker exec -it guest_app bash```
+3. ```composer install```
+4. ```php artisan key:generate```
+5. ```php artisan jwt:secret```
+
+## Миграции
+
+1. ```php artisan migrate```
+2. ```php artisan app:get-jwt``` // Создаст пользователя и вернёт токен
+3. ```php artisan db:seed GuestSeeder```  // Наполнит таблицу (20 записей)
+
+## Ошибки
+
+- Если возникнут ошибки с правами на запись в директорию ```/storage```, то выполнить команду из под ```guest_app```:
+  ```chown -R www-data:www-data guest_app```
+
+# Роуты
 
 ### 1. GET|HEAD /api/guests?page={number}
 
@@ -129,23 +150,3 @@ Accept: application/json
     }
 }
 ```
-
-# Project
-
-## Установка
-
-1. ```docker compose up -d --build```
-2. ```docker exec -it guest_app bash```
-3. ```composer install```
-
-## Миграции
-
-1. ```php artisan migrate```
-2. ```php artisan key:generate```
-3. ```php artisan app:get-jwt``` // Создаст пользователя и вернёт токен
-4. ```php artisan db:seed GuestSeeder```  // Наполнит таблицу (20 записей)
-
-## Ошибки
-
-- Если возникнут ошибки с правами на запись в директорию ```/storage```, то выполнить команду из под ```guest_app```:
-  ```chown -R www-data:www-data guest_app```
