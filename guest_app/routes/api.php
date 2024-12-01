@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\DebugHeaders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuestController;
@@ -12,4 +13,4 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
     Route::post('me', [AuthController::class, 'me']);
 });
 
-Route::resource('guests', GuestController::class, ['only' => ['index', 'show', 'store', 'update', 'destroy']])->middleware('jwt.auth');
+Route::resource('guests', GuestController::class, ['only' => ['index', 'show', 'store', 'update', 'destroy']])->middleware(['jwt.auth', DebugHeaders::class]);
