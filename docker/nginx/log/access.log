@@ -49,3 +49,8 @@
 172.19.0.1 - - [01/Dec/2024:11:38:26 +0000] "POST /api/guests HTTP/1.1" 500 289168 "-" "PostmanRuntime/7.43.0"
 172.19.0.1 - - [01/Dec/2024:11:38:54 +0000] "POST /api/guests HTTP/1.1" 500 323833 "-" "PostmanRuntime/7.43.0"
 172.19.0.1 - - [01/Dec/2024:11:47:21 +0000] "POST /api/guests HTTP/1.1" 500 323832 "-" "PostmanRuntime/7.43.0"
+172.18.0.1 - - [01/Dec/2024:12:13:24 +0000] "POST /api/guests HTTP/1.1" 500 177354 "-" "PostmanRuntime/7.43.0"
+172.18.0.1 - - [01/Dec/2024:12:15:16 +0000] "POST /api/guests HTTP/1.1" 500 324093 "-" "PostmanRuntime/7.43.0"
+172.18.0.1 - - [01/Dec/2024:12:15:24 +0000] "POST /api/guests HTTP/1.1" 500 276511 "-" "PostmanRuntime/7.43.0"
+172.18.0.1 - - [01/Dec/2024:12:15:47 +0000] "POST /api/guests HTTP/1.1" 500 324086 "-" "PostmanRuntime/7.43.0"
+172.18.0.1 - - [01/Dec/2024:12:15:49 +0000] "POST /api/guests HTTP/1.1" 201 162 "-" "PostmanRuntime/7.43.0"

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->nullable()->unique();
             $table->string('country')->nullable();
             $table->timestamps();
-        });.
+        });
     }
 
     /**
