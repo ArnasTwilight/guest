@@ -12,8 +12,4 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
     Route::post('me', [AuthController::class, 'me']);
 });
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
-
 Route::resource('guests', GuestController::class, ['only' => ['index', 'show', 'store', 'update', 'destroy']])->middleware('jwt.auth');

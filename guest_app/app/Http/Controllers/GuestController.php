@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Guest\UpdateRequest;
 use App\Http\Requests\Guest\StoreRequest;
+use App\Http\Requests\Guest\UpdateRequest;
 use App\Http\Resources\Guest\GuestResource;
 use App\Models\Guest;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Propaganistas\LaravelPhone\PhoneNumber;
 
 class GuestController extends Controller
 {
@@ -17,14 +15,7 @@ class GuestController extends Controller
      */
     public function index()
     {
-//        $user = User::create([
-//            'name' => 'Test',
-//            'email' => 'test@test.com',
-//            'password' => 'password123'
-//        ]);
-//        return $user;
-
-        $guest = Guest::all();
+        $guest = Guest::query()->paginate(10);
         return GuestResource::collection($guest);
     }
 
@@ -34,6 +25,11 @@ class GuestController extends Controller
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
+
+        if (empty($data['country'])) {
+            $data['country'] = (new PhoneNumber($data['phone']))->getCountry();
+        }
+
         $guest = Guest::create($data);
 
         return GuestResource::make($guest);
