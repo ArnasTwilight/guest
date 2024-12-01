@@ -7,6 +7,7 @@ use App\Http\Requests\Guest\UpdateRequest;
 use App\Http\Resources\Guest\GuestResource;
 use App\Models\Guest;
 use Propaganistas\LaravelPhone\PhoneNumber;
+use function PHPUnit\Framework\returnArgument;
 
 class GuestController extends Controller
 {
@@ -61,7 +62,9 @@ class GuestController extends Controller
     {
         $guest->delete();
         return response()->json([
-            'message' => 'Deleted successfully'
+            'data' => [
+                'message' => 'Deleted successfully'
+            ]
         ]);
     }
 }

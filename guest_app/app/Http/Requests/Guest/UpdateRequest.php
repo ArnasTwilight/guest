@@ -22,10 +22,10 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
-            'surname' => 'required|string',
-            'phone' => 'required|phone',
-            'email' => 'string',
+            'name' => 'string',
+            'surname' => 'string',
+            'phone' => 'phone',
+            'email' => 'email',
             'country' => 'string'
         ];
     }
